@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    home
+    <Home/>
   </div>
 </template>
 
 <script>
+import Home from './pages/home/Home'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: { Home }
 }
 </script>
 
@@ -17,6 +20,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
