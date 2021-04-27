@@ -28,63 +28,8 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data () {
-    return {
-      iconList: [{
-        id: '0001',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: '景点门票'
-      },
-      {
-        id: '0002',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: '滑雪季节'
-      },
-      {
-        id: '0003',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: '泡温泉'
-      },
-      {
-        id: '0004',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: 'zzz'
-      },
-      {
-        id: '0005',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: 'aaa'
-      },
-      {
-        id: '0006',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: 'bbb'
-      },
-      {
-        id: '0007',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: 'ffff'
-      },
-      {
-        id: '0008',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: 'eeee'
-      },
-      {
-        id: '0009',
-        imageUrl: `http://img1.qunarzz.com/sight/p0/
-        1902/f2/f2e0213052717f7ca3.water.jpg_250x250_540fc25d.jpg`,
-        desc: 'zzzz'
-      }]
-    }
+  props: {
+    iconList: Array
   },
   computed: {
     pages () {

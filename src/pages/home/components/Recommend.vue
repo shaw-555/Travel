@@ -17,35 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          id: '0001',
-          title: 'hehe',
-          desc: 'zzzzzz',
-          imgUrl: ''
-        },
-        {
-          id: '0002',
-          title: 'hehe',
-          desc: 'zzzzzz',
-          imgUrl: ''
-        },
-        {
-          id: '0003',
-          title: 'hehe',
-          desc: 'zzzzzz',
-          imgUrl: ''
-        },
-        {
-          id: '0004',
-          title: 'hehe',
-          desc: 'zzzzzz',
-          imgUrl: ''
-        }
-      ]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
