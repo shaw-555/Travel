@@ -25,36 +25,6 @@ export default {
   props: {
     list: Array
   }
-  // data () {
-  //   return {
-  //     list: [
-  //       {
-  //         id: '001',
-  //         title: 'bar',
-  //         desc: 'lfjdasdfas;djf',
-  //         imgUrl: ''
-  //       },
-  //       {
-  //         id: '002',
-  //         title: 'bar',
-  //         desc: 'lfjdasdfas;djf',
-  //         imgUrl: ''
-  //       },
-  //       {
-  //         id: '003',
-  //         title: 'bar',
-  //         desc: 'lfjdasdfas;djf',
-  //         imgUrl: ''
-  //       },
-  //       {
-  //         id: '004',
-  //         title: 'bar',
-  //         desc: 'lfjdasdfas;djf',
-  //         imgUrl: ''
-  //       }
-  //     ]
-  //   }
-  // }
 }
 </script>
 
