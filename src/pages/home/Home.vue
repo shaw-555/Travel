@@ -2,8 +2,8 @@
     <div>
        <home-header :city="city"/>
        <home-swiper :list="swiperList"/>
-       <home-icons :iconList="iconList"/>
-       <home-recommend :recommendList="recommendList"/>
+       <home-icons :list="iconList"/>
+       <home-recommend :list="recommendList"/>
        <home-weekend :list="weekendList"/>
     </div>
 </template>

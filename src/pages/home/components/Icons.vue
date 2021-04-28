@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div
           class="icon"
@@ -29,12 +29,19 @@
 export default {
   name: 'HomeIcons',
   props: {
-    iconList: Array
+    list: Array
+  },
+  data () {
+    return {
+      swiperOption: {
+        autoPlay: false
+      }
+    }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

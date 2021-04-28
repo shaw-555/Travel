@@ -8,7 +8,7 @@
         :key="item.id"
         >
         <div class="item-img-wrapper">
-          <div class="item-img" :src="item.imgUrl"></div>
+          <img class="item-img" :src="item.imgUrl"/>
         </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -37,10 +37,10 @@ export default {
   .item-img-wrapper
     overflow: hidden
     height: 0
-    padding-bottom: 37.9%
+    padding-bottom: 37.09%
     .item-img
       width: 100%
-      height: 100%
+      height: 2rem
   .item-info
     padding: .1rem
     .item-title
