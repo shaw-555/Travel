@@ -1,7 +1,7 @@
 <template>
   <div>
     <city-header/>
-    <city-search/>
+    <city-search :cities="cities"/>
     <city-list
       :cities="cities"
       :hot="hotCities"
@@ -30,7 +30,7 @@ export default {
     CityAlphabet
   },
   updated () {
-    console.log('letter is ',this.letter)
+    console.log('letter is ', this.letter)
   },
   data () {
     return {
