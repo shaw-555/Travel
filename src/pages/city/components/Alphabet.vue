@@ -32,11 +32,20 @@ export default {
   },
   data () {
     return {
-      touchStatus: false，
+<<<<<<< HEAD
+      touchStatus: false,
       startY: 0
     }
   },
   updated() {
+=======
+      touchStatus: false,
+      startY: 0,
+      timer: null
+    }
+  },
+  updated () {
+>>>>>>> city-components
     this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
@@ -48,12 +57,17 @@ export default {
     },
     handleTouchMove (e) {
       if (this.touchStatus === true) {
-        const startY = this.$refs['A'][0].offsetTop
-        const touchY = e.touches[0].clientY - 79
-        const index = Math.floor((touchY - startY) / 14)
-        if (index >= 1 && index <= this.letters.length) {
-          this.$emit('change', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => {
+          const startY = this.$refs['A'][0].offsetTop
+          const touchY = e.touches[0].clientY - 79
+          const index = Math.floor((touchY - startY) / 14)
+          if (index >= 1 && index <= this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+        }, 16)
       }
     },
     handleTouchEnd (e) {
