@@ -32,25 +32,18 @@ export default {
   },
   data () {
     return {
-<<<<<<< HEAD
-      touchStatus: false,
-      startY: 0
-    }
-  },
-  updated() {
-=======
       touchStatus: false,
       startY: 0,
       timer: null
     }
   },
   updated () {
->>>>>>> city-components
     this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
     handleLetterClick (e) {
       this.$emit('change', e.target.innerText)
+      console.log(e.target.innerText)
     },
     handleTouchStart (e) {
       this.touchStatus = true
@@ -88,8 +81,8 @@ export default {
    top: 1.58rem
    bottom: 0
    width: .4rem
-   background-color #f00
-    .item
-      line-height: .4rem
-      text-align: center
+  .item
+    line-height: .4rem
+    text-align: center
+    background-color: #eee
 </style>

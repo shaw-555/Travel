@@ -29,6 +29,9 @@ export default {
     CityList,
     CityAlphabet
   },
+  updated () {
+    console.log('letter is ',this.letter)
+  },
   data () {
     return {
       cities: {},
