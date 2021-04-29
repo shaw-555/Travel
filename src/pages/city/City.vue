@@ -2,8 +2,8 @@
   <div>
     <city-header/>
     <city-search/>
-    <city-list :list="hotCities" :normalCity="normalCities"/>
-    <city-alphabet/>
+    <city-list :cities="cities" :hot="hotCities"/>
+    <city-alphabet :cities="cities"/>
   </div>
 </template>
 
@@ -24,8 +24,8 @@ export default {
   },
   data () {
     return {
-      hotCities: [{}],
-      normalCities: {}
+      cities: {},
+      hotCities: []
     }
   },
   methods: {
@@ -34,11 +34,12 @@ export default {
         .then(this.handleGetCityInfoSucc)
     },
     handleGetCityInfoSucc (res) {
-      let data = res.data.data
-      this.hotCities = data.hotCities
-      this.normalCities = data.cities
-      console.log(this.normalCities)
-      console.log(Object.keys(this.normalCities))
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.cities = data.cities
+        this.hotCities = data.hotCities
+      }
     }
   },
   mounted () {

@@ -12,15 +12,17 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper"  v-for="item in list" :key="item.id">
+          <div class="button-wrapper"  v-for="item in hot" :key="item.id">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border-topbottom" v-for="(item, index) in Object.keys(normalCity)" :key="index">{{item}}</div>
-        <div class="item-list" v-for="city in normalCity" :key="city.id">
-          <div class="item border-bottom">{{city.name}}</div>
+      <div class="area" v-for="(item,key) of cities" :key="key">
+        <div class="title border-topbottom">{{key}}</div>
+        <div class="item-list">
+          <div class="item border-bottom" v-for="innerItem of item" v-bind:key="innerItem.id">
+            {{innerItem.name}}
+          </div>
         </div>
       </div>
     </div>
@@ -32,8 +34,8 @@ import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
   props: {
-    list: Array,
-    normalCity: Object
+    hot: Array,
+    cities: Object
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
