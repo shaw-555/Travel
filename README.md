@@ -1,5 +1,20 @@
 # travel
 
+# 2021年4月29日 梳理兄弟组件间数据如何联动、实现点击字母弹出对应列表
+  前提，List、Alphabet组件都是City组件的子组件，有公共父组件，所以不需用bus实现
+  数据共享，使用$emit与prop即可
+
+  步骤：
+  1. 使用watch属性监听List中属性的变化，当letter变化时，通过this.$refs[字母][0]
+     来拿到相应的dom，并使用该dom作为参数传入this.scroll.scrollToMove()来实现
+     跳转到对应的列表模块
+  2. 在Alphabet中，要实现滑动到对应字母，就弹出相应的字母开头的列表块。首先通过计算
+     被滑动字母的位置与A字母之差，再除以字母块的高，得出对应的距离，再将该距离作为inedx
+     传入this.letters，从而得到相应的字母。之后，使用this.$emmit，将之派发到父组
+     件上，父组件再调用handleLetterChange把更新后的字母传给List组件，List组件监听
+     到letter变化后，触发监听属性letter()调用 this.scroll.scrollToMove()来实现
+     滚动跳转
+
 # 2021年4月26日踩的坑
   1.更加注意函数名后面要加括号了
 

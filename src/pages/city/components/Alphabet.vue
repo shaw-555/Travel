@@ -32,8 +32,12 @@ export default {
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false，
+      startY: 0
     }
+  },
+  updated() {
+    this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
     handleLetterClick (e) {
