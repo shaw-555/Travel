@@ -8,7 +8,10 @@ import CityHeader from '.components/city';
       <ul>
         <li
         class="search-item border-bottom"
-        v-for="item of list" :key="item.id">
+        v-for="item of list"
+        :key="item.id"
+        @click="handleCityClick(item.name)"
+        >
           {{item.name}}</li>
 
         <li class="search-item border-bottom" v-show="hasNoData">没有找到匹配数据</li>
@@ -35,6 +38,12 @@ export default {
   computed: {
     hasNoData () {
       return !this.list.length
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
     }
   },
   mounted () {
