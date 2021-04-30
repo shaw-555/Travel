@@ -1,4 +1,3 @@
-import CityHeader from '.components/city';
 <template>
   <div class="header">
     选择城市

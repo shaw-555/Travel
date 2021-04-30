@@ -22,6 +22,7 @@ import CityHeader from '.components/city';
 
 <script>
 import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 
 export default {
   name: 'CitySearch',
@@ -42,9 +43,11 @@ export default {
   },
   methods: {
     handleCityClick (city) {
-      this.$store.dispatch('changeCity', city)
+      // this.$store.dispatch('changeCity', city)
+      this.changeCity(city)
       this.$router.push('/')
-    }
+    },
+    ...mapMutations(['changeCity'])
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search)
@@ -75,6 +78,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import '~styles/varibles.styl'
+import { mapMutations } from 'vuex'
   .search
     height: .72rem
     background: $bgColor
