@@ -2,24 +2,20 @@
   <div class="list" ref="wrapper">
     <div>
       <div class="area">
-        <div class="title border-topbottom">当前城市</div>
+        <div class="title border-topbottom" >当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{this.currentCity}}</div>
+            <div class="button" @click="change(this.currentCity)">{{this.currentCity}}</div>
           </div>
         </div>
       </div>
       <div class="area">
-        <div class="title border-topbottom">热门城市</div>
-        <div class="button-list">
-          <div class="button-wrapper"
-          v-for="item in hot"
-          :key="item.id"
-          @click="handleCityClick(item.name)"
-        >
-            <div class="button">{{item.name}}</div>
+          <div class="title border-topbottom">热门城市</div>
+          <div class="button-list">
+            <div class="button-wrapper" v-for="item of hot" :key="item.id" >
+              <div class="button" @click="change(item.name)" >{{item.name}}</div>
+            </div>
           </div>
-        </div>
       </div>
       <div class="area"
         v-for="(item,key) of cities"
@@ -32,7 +28,7 @@
             class="item border-bottom"
             v-for="innerItem of item"
             v-bind:key="innerItem.id"
-            @click="handleCityClick(innerItem.name)"
+            @click="change(innerItem.name)"
           >
             {{innerItem.name}}
           </div>
@@ -59,7 +55,10 @@ export default {
       this.changeCity(city)
       this.$router.push('/')
     },
-    ...mapMutations(['changeCity'])
+    ...mapMutations(['changeCity']),
+    change (key) {
+      console.log(key)
+    }
   },
   computed: {
     ...mapState({
