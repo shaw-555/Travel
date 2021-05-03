@@ -44,5 +44,7 @@ export default {
     font-size: .32rem
     padding: 0 .2rem
   .item-chilren
+    position: relative
+    left: 1rem
     padding: 0 .2rem
 </style>
