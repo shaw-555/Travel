@@ -2,14 +2,18 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul v-for="item in list" :key="item.id">
-      <li class="item border-bottom">
-          <img :src="item.imgUrl" class="item-img">
+      <router-link
+        tag='li'
+        class="item border-bottom"
+        :to="'/detail/' + item.id"
+      >
+        <img :src="item.imgUrl" class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="itme-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+    </router-link>
     </ul>
   </div>
 </template>

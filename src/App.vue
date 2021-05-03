@@ -9,12 +9,14 @@
 <script>
 import Home from './pages/home/Home'
 import City from './pages/city/City'
+import Detail from './pages/detail/Detail'
 
 export default {
   name: 'App',
   components: {
     Home,
-    City
+    City,
+    Detail
   }
 }
 </script>

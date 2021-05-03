@@ -2,7 +2,7 @@
     <div>
         <div class="header">
           <div class="header-left">
-            <div class="iconfont back-icon">&#xe624;</div>
+            <div class="iconfont back-icon" @click="test">&#xe624;</div>
           </div>
           <div class="header-input">
             <span class="iconfont">&#xe632;</span>
@@ -23,6 +23,12 @@ export default {
   name: 'HomeHeader',
   computed: {
     ...mapState(['city'])
+  },
+  methods: {
+    test () {
+      this.$router.push('/detail')
+      console.log(1)
+    }
   }
 }
 </script>
