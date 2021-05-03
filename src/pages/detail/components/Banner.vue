@@ -15,13 +15,14 @@
     <CommonGallary
       :img="imgs"
       v-show="showGallary"
-      @close="handleGalleryClose"
+      @close="handleGallaryClose"
     />
   </div>
 </template>
 
 <script>
 import CommonGallary from 'common/gallary/Gallary.vue'
+import axios from 'axios'
 
 export default {
   name: 'DetailBanner',
@@ -37,10 +38,25 @@ export default {
     },
     handleGallaryClose () {
       this.showGallary = false
+    },
+    handleGetDetailInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        // console.log(res.data.gallaryImgs)
+        this.imgs = res.data.gallaryImgs
+      }
+      console.log(this.imgs)
+    },
+    getDetailInfo () {
+      axios.get('/api/detail.json')
+        .then(this.handleGetDetailInfoSucc)
     }
   },
   components: {
     CommonGallary
+  },
+  mounted () {
+    this.getDetailInfo()
   }
 }
 </script>
