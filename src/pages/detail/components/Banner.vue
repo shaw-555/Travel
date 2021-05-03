@@ -1,21 +1,47 @@
 <template>
-  <div class="banner">
-    <img
-    class="banner-img"
-    src="http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg">
-    <div class="banner-info">
-        <div class="banner-title">
-          xxx海上世界
+  <div>
+    <div class="banner" @click="handleBannerClick">
+      <img
+      class="banner-img"
+      src="http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg">
+      <div class="banner-info">
+          <div class="banner-title">
+            xxx海上世界
+          </div>
+          <div class="banner-number">
+            <span class="iconfont banner-icon">&#xe692;</span>39</div>
         </div>
-        <div class="banner-number">
-          <span class="iconfont banner-icon">&#xe692;</span>39</div>
-      </div>
+    </div>
+    <CommonGallary
+      :img="imgs"
+      v-show="showGallary"
+      @close="handleGalleryClose"
+    />
   </div>
 </template>
 
 <script>
+import CommonGallary from 'common/gallary/Gallary.vue'
+
 export default {
-  name: 'DetailBanner'
+  name: 'DetailBanner',
+  data () {
+    return {
+      showGallary: false,
+      imgs: ['1']
+    }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallary = true
+    },
+    handleGallaryClose () {
+      this.showGallary = false
+    }
+  },
+  components: {
+    CommonGallary
+  }
 }
 </script>
 
