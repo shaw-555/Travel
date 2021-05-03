@@ -46,7 +46,12 @@ export default {
     }
   },
   activated () {
+    // 可能会带来全局事件,对其他组件产生影响
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    // 对window全局事件进行解绑
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
