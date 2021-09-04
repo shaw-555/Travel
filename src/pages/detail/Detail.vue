@@ -1,5 +1,6 @@
 <template>
   <div>
+    111
     <DetailBanner
       :sightName="sightName"
       :bannerImg="bannerImg"

@@ -1,7 +1,7 @@
 <template>
   <div>
       <router-link
-        tag="div"
+        v-slot="{}"
         to="/"
         class="header-abs"
         v-show="showAbs">

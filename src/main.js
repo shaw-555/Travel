@@ -8,6 +8,7 @@ import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
 import VueAweSomeSwiper from 'vue-awesome-swiper'
+import 'babel-polyfill'
 import store from './store'
 import 'swiper/dist/css/swiper.css'
 
