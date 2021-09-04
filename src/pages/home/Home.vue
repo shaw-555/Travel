@@ -54,6 +54,7 @@ export default {
       }
       console.log(this.city)
       console.log(this.swiperList)
+      console.log(this.iconList)
     }
   },
   mounted () {
