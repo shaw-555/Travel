@@ -2,11 +2,11 @@
   <div>
     <city-header/>
     <city-search :cities="cities"/>
-    <city-list
+    <!-- <city-list
       :cities="cities"
       :hot="hotCities"
       :letter="letter"
-    />
+    /> -->
     <city-alphabet
       :cities="cities"
       @change="handleLetterChange"
